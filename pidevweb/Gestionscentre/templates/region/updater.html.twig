@@ -1,0 +1,40 @@
+{% extends 'front.html.twig' %}
+{% block body %}
+<div class="container mb-4" >
+<h1>Modifier</h1>
+{{form_start(rupdate)}}
+    <div class="form-group">
+
+        {{ form_label(rupdate.nomr,"Nom") }}
+        {{ form_errors(rupdate.nomr)  }}
+        {{ form_widget(rupdate.nomr , {'attr':{'class':'form-control p_input'}}) }}
+    </div>
+    <div class="form-group">
+
+        {{ form_label(rupdate.descriptionr,"Description") }}
+        {{ form_errors(rupdate.descriptionr)  }}
+        {{ form_widget(rupdate.descriptionr , {'attr':{'class':'form-control p_input'}}) }}
+    </div>
+    <div class="form-group">
+
+        {{ form_label(rupdate.caracteristique ,"Caracteristique") }}
+        {{ form_errors(rupdate.caracteristique )  }}
+        {{ form_widget(rupdate.caracteristique, {'attr':{'class':'form-control p_input'}}) }}
+    </div>
+    <div class="form-group">
+
+        {{ form_label(rupdate.ville,"Ville") }}
+        {{ form_errors(rupdate.ville)  }}
+        {{ form_widget(rupdate.ville , {'attr':{'class':'form-control p_input'}}) }}
+    </div>
+    <div class="form-group">
+
+        {{ form_label(rupdate.gouvernorat,"Gouvernorat") }}
+        {{ form_errors(rupdate.gouvernorat)  }}
+        {{ form_widget(rupdate.gouvernorat , {'attr':{'class':'form-control p_input'}}) }}
+    </div>
+    {{ form_row(rupdate.Modifier, {'attr': {'class' : 'btn btn-success btn-block enter-btn'}} ) }}
+    {{ form_end(rupdate) }}
+</div>
+
+{% endblock %}

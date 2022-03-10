@@ -1,0 +1,57 @@
+
+
+
+{% extends 'front.html.twig' %}
+{% block body %}
+
+<body>
+<center>
+  <h1>Les centres de region {{ regionname}} </h1>
+  <table  class="table table-dark">
+    <tr>
+
+      <th>Nom</th>
+      <th>description</th>
+      <th>Image</th>
+      <th>type</th>
+      <th>prix</th>
+
+
+    </tr>
+
+    {% for c in centrecamping  %}
+
+      {% if c.idr.getIdr() == idregion  %}
+    <tr>
+
+      <td>
+        {{ c.nomc }}
+      </td>
+      <td>
+        {{ c.descriptionc }}
+      </td>
+
+      <td>
+        <img class="" height="100px" width="200px" src="{{ asset('images/' ~ c.imgcentre ) }}">
+
+      </td>
+      <td>
+        {{ c.typec}}
+      </td>
+
+      <td>
+        {{ c.prix}}
+      </td>
+
+
+
+
+    </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+
+</center>
+</body>
+
+{% endblock %}

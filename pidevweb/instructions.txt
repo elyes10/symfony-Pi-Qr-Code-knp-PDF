@@ -1,0 +1,38 @@
+ .
+
+bundle: install :
+ composer require endroid/qr-code
+composer require knplabs/knp-snappy-bundle          (pdf)
+composer require endroid/qr-code-bundle
+install wkhtmltopdf 64bit version from   https://wkhtmltopdf.org/downloads.html
+
+ https://youtu.be/c7HDJKvRrYY     qrcode video : pour comprendre
+
+
+
+
+Done:
+//pdf
+//qr code
+//search center
+//show centers by region
+//Notification on delete and update and Add Region    (code in function delete and func update and fuction Add) (refrech page msg dissapear)
+//added image to center      (note update database add image field in center table
+   
+                                                                              )
+scan Qr avec smartphone application : google lens
+pdf generer dans c:/ 
+
+routes:
+front end center:   http://127.0.0.1:8000/centre/afficheFront
+front end region:   http://127.0.0.1:8000/region/afficheFront
+back end region:    http://127.0.0.1:8000/region/affiche
+back end center:    http://127.0.0.1:8000/centre/affiche
+
+
+//if you encounter this error:
+Erreur in Qr cannot create image enable GD :
+fix:
+https://codeanddeploy.com/blog/php/how-to-install-php-gd-extension-on-windows-wamp-and-xampp-server
+open xamppp 
+php.ini incomment  extension=gd               (enable gd extension in qr)

@@ -1,0 +1,39 @@
+{% extends 'front.html.twig' %}
+{% block body %}
+    <div class="container mb-4">
+        <h1>Ajouter</h1>
+        {{ form_start(form) }}
+        <div class="form-group">
+
+            {{ form_label(form.nomr,"Nom") }}
+            {{ form_errors(form.nomr) }}
+            {{ form_widget(form.nomr, {'attr':{'class':'form-control p_input'}}) }}
+        </div>
+        <div class="form-group">
+
+            {{ form_label(form.descriptionr,"Description") }}
+            {{ form_errors(form.descriptionr) }}
+            {{ form_widget(form.descriptionr , {'attr':{'class':'form-control p_input'}}) }}
+        </div>
+        <div class="form-group">
+
+            {{ form_label(form.caracteristique ,"Caracteristique") }}
+            {{ form_errors(form.caracteristique ) }}
+            {{ form_widget(form.caracteristique, {'attr':{'class':'form-control p_input'}}) }}
+        </div>
+        <div class="form-group">
+
+            {{ form_label(form.ville,"Ville") }}
+            {{ form_errors(form.ville) }}
+            {{ form_widget(form.ville , {'attr':{'class':'form-control p_input'}}) }}
+        </div>
+        <div class="form-group">
+
+            {{ form_label(form.gouvernorat,"Gouvernorat") }}
+            {{ form_errors(form.gouvernorat) }}
+            {{ form_widget(form.gouvernorat , {'attr':{'class':'form-control p_input'}}) }}
+        </div>
+        {{ form_row(form.Ajouter, {'attr': {'class' : 'btn btn-success btn-block enter-btn'}} ) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

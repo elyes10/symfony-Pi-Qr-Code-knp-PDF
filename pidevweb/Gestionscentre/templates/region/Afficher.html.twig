@@ -1,0 +1,50 @@
+{% extends 'front.html.twig' %}
+{% block body %}
+    <body>
+
+    <center>
+        <h1>la liste des regions </h1>
+        <div style="display: flex">
+            {% for r in region %}
+                <div class="card" style="width: 18rem;margin: 20px">
+                    {% if r.nomr=='Desert' %}
+                        <img class="card-img-top" height="50%" src="{{ asset('images/desert.jpg') }}" alt="Card image cap">
+                    {% elseif r.nomr=='Ocean' %}
+                        <img class="card-img-top" height="50%" src="{{ asset('images/ocean.jpg') }}" alt="Card image cap">
+                    {% else %}
+                        <img class="card-img-top" height="50%" src="{{ asset('images/mountan.png') }}" alt="Card image cap">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">Nom: {{ r.nomr }}</h5>
+                        <p class="card-text">Infos:  {{ r.descriptionr }}</p>
+                        <p class="card-text">Caracteristique:  {{ r.caracteristique }}</p>
+                        <p class="card-text">Gouvernorat:  {{ r.gouvernorat }}</p>
+                        <a href="/region/delete/{{ r.idr }}">
+                            <button type="button" class="btn btn-danger"><font
+                                        size="3pt">{% trans %}Delete{% endtrans %}</font></button>
+                        </a>
+                        <a href="{{ path('modr',{'idr': r.idr}) }}">
+                            <button type="button" class="btn btn-primary"><font
+                                        size="3pt">{% trans %}Update{% endtrans %}</font></button>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div>
+
+            <td><a href="{{ path('r_add') }}">
+                    <button type="button" class="btn btn-outline-danger"><font
+                                size="3pt">{% trans %}Ajouter{% endtrans %}</font></button>
+                </a>
+        </div>
+
+    </center>
+    {# Notification delete update region #}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    </body>
+{% endblock %}

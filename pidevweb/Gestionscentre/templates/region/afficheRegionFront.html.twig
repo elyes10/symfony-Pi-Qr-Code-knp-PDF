@@ -1,0 +1,37 @@
+{% extends 'front.html.twig' %}
+{% block body %}
+    <body>
+    <center>
+        <h1>la liste des regions </h1>
+        <div style="display: flex">
+            {% for r in region %}
+                <div class="card" style="width: 18rem;margin: 20px">
+                    {% if r.nomr=='Desert' %}
+                        <img class="card-img-top" height="50%" src="{{ asset('images/desert.jpg') }}" alt="Card image cap">
+                    {% elseif r.nomr=='Ocean' %}
+                        <img class="card-img-top" height="50%" src="{{ asset('images/ocean.jpg') }}" alt="Card image cap">
+                    {% else %}
+                        <img class="card-img-top" height="50%" src="{{ asset('images/mountan.png') }}" alt="Card image cap">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">Nom: {{ r.nomr }}</h5>
+                        <p class="card-text">Infos:  {{ r.descriptionr }}</p>
+                        <p class="card-text">Caracteristique:  {{ r.caracteristique }}</p>
+                        <p class="card-text">Gouvernorat:  {{ r.gouvernorat }}</p>
+                        <a href="/centre/afficheParRegion/{{ r.idr }}/{{ r.nomr }}">
+                            <button type="button" class="btn btn-info btn-sm"><font
+                                        size="3pt">{% trans %}Show Centers{% endtrans %}</font></button>
+                        </a>
+
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div>
+
+
+        </div>
+
+    </center>
+    </body>
+{% endblock %}

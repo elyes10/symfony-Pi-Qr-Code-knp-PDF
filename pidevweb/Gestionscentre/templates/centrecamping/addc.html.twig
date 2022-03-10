@@ -1,0 +1,46 @@
+{% extends 'front.html.twig' %}
+{% block body %}
+    <div class="container mb-4">
+        <h1>Ajouter une centre de camping</h1>
+        {{ form_start(form) }}
+        <div class="form-group">
+
+            {{ form_label(form.nomc,"Nom") }}
+            {{ form_errors(form.nomc) }}
+            {{ form_widget(form.nomc, {'attr':{'class':'form-control p_input'}}) }}
+        </div>
+        <div class="form-group">
+
+            {{ form_label(form.descriptionc,"Description") }}
+            {{ form_errors(form.descriptionc) }}
+            {{ form_widget(form.descriptionc , {'attr':{'class':'form-control p_input'}}) }}
+        </div>
+        <div class="form-group">
+
+            {{ form_label(form.prix ,"Prix") }}
+            {{ form_errors(form.prix ) }}
+            {{ form_widget(form.prix, {'attr':{'class':'form-control p_input'}}) }}
+        </div>
+        <div class="form-group">
+
+            {{ form_label(form.typec,"Type") }}
+            {{ form_errors(form.typec) }}
+            {{ form_widget(form.typec , {'attr':{'class':'form-control p_input'}}) }}
+        </div>
+        <div class="form-group">
+
+            {{ form_label(form.idr,"idr") }}
+            {{ form_errors(form.idr) }}
+            {{ form_widget(form.idr , {'attr':{'class':'form-control p_input'}}) }}
+        </div>
+        <div class="form-group">
+            {% set usernameplaceholder = 'Example: logo.png' %}
+            {{ form_label(form.imgcentre,"Image Name") }}
+            {{ form_errors(form.imgcentre) }}
+            {{ form_widget(form.imgcentre , {'attr':{'class':'form-control p_input','placeholder': usernameplaceholder}}) }}
+        </div>
+
+        {{ form_row(form.Ajouter, {'attr': {'class' : 'btn btn-success btn-block enter-btn'}} ) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

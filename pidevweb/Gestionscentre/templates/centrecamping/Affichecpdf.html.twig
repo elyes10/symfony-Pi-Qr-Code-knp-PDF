@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pdf</title>
+</head>
+<body>
+<h1 style="margin-left: 800px;color: #0000cc">La liste des centres  </h1>
+
+
+    {% for c in centrecamping  %}
+        <div>
+            <h1>Nom centre:  {{ c.nomc }} </h1>
+            <h1>Description:  {{ c.descriptionc }}</h1>
+            <h1>Type:  {{ c.typec}}</h1>
+            <h1>Prix:    {{ c.prix}}</h1>
+            <h1 style="border-bottom: 5px solid blue;"></h1>
+        </div>
+
+    {%endfor%}
+
+
+
+</body>
+</html>
